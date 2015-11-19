@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_order_form_ysm" model="ir.ui.view">
+            <field name="name">sale.order.form.ysm</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+			<field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_id']" position="after">
+				<field name="deliver_limit"/>
+            	<field name="trade_policy"/>
+            	<field name="expiry_date"/>
+			</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>
+

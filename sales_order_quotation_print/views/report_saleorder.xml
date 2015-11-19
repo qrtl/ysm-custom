@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_saleorder_document_ysm" inherit_id="sale.report_saleorder_document">
+	<xpath expr="//div[@class='page']" position="replace">
+		<div class="page">
+		<div class="oe_structure"/>
+		
+			<h2 style="text-align: center">
+				<span t-if="o.state not in ['draft','sent']">Sales Order Letter</span>
+				<span t-if="o.state in ['draft','sent']">Quotation Letter</span>
+			</h2>
+			
+			<div class="row">
+				<div class="col-xs-8">
+					<h4 t-if="o.partner_id.parent_id" t-field="o.partner_id.parent_id"/>
+					<h4>
+						<span t-field="o.partner_id.name"/>
+						<span t-field="o.partner_id.title"/>
+					</h4>
+				</div>
+				<div class="col-xs-4" style="text-align: right">
+					<p/>
+					<p/>
+					No. <span t-field="o.name"/>
+					<p t-field="o.date_order"/>
+				</div>
+				<div class="col-xs-6">
+				</div>
+				<div class="col-xs-3">
+					<h4>Total Amount</h4>
+				</div>
+				<div class="col-xs-3">
+					<h4 style="text-align: right">
+						<span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+					</h4>
+				</div>
+				<div class="col-xs-6 pull-right">
+					<div style="border-bottom: 2px solid black"/>
+				</div>
+			</div>
+			
+			<div class="row mt32 mb32" id="informations">
+				<div class="col-xs-12">
+					<div t-if="o.client_order_ref">
+						Reference:
+						<span t-field="o.client_order_ref"/>
+					</div>
+					<p/>
+					<div t-if="o.deliver_limit">
+						Delivery Deadline:
+						<span t-field="o.deliver_limit"/>
+					</div>
+					<div t-if="o.trade_policy">
+						Transaction Method:
+						<span t-field="o.trade_policy"/>
+					</div>
+					<div t-if="o.partner_shipping_id">
+						Delivery Address:
+						<span t-field="o.partner_shipping_id"/>
+					</div>
+					<div t-if="o.expiry_date">
+						Expiration Date:
+						<span t-field="o.expiry_date"/>
+					</div>
+				</div>
+			</div>
+			
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>Product Code</th>
+						<th>Product Name</th>
+						<th class="text-right">Quantity</th>
+						<th class="text-right">Unit Price</th>
+						<th groups="sale.group_discount_per_so_line">Disc.(%)</th>
+						<th class="text-right">Total</th>
+					</tr>
+				</thead>
+				<tbody class="sale_tbody">
+					<tr t-foreach="o.order_line" t-as="l">
+						<td>
+							<span t-field="l.product_id.default_code"/>
+						</td>
+						<td>
+							<span t-field="l.product_id.name"/>
+						</td>
+						<td class="text-right">
+							<span t-field="l.product_uom_qty"/>
+							<span groups="product.group_uom" t-field="l.product_uom"/>
+						</td>
+						<td class="text-right">
+							<span t-field="l.price_unit"/>
+						</td>
+						<td groups="sale.group_discount_per_so_line">
+							<span t-field="l.discount"/>
+						</td>
+						<td class="text-right">
+							<span t-field="l.price_subtotal" t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<div class="row">
+				<div class="col-xs-4 pull-right">
+					<table class="table table-condensed">
+						<tr class="border-black">
+							<td>
+								<strong>Subtotal</strong>
+							</td>
+							<td class="text-right">
+								<span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<strong>Taxes</strong>
+							</td>
+							<td class="text-right">
+								<span t-field="o.amount_tax" t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+							</td>
+						</tr>
+						<tr class="border-black">
+							<td>
+								<strong>Total</strong>
+							</td>
+							<td class="text-right">
+								<span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<strong t-if="o.note">Notes</strong>
+			<p/>
+			<p t-field="o.note"/>
+			
+		<div class="oe_structure"/>
+		</div>
+	</xpath>
+</template>
+</data>
+</openerp>
