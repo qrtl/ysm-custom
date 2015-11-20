@@ -1,0 +1,172 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sales_order_print_adjust_ysm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-20 11:40+0000\n"
+"PO-Revision-Date: 2015-11-20 11:40+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sales_order_print_adjust_ysm
+#: code:addons/sales_order_print_adjust_ysm/models/sale.py:32
+#, python-format
+msgid "Cutoff at Month-End"
+msgstr "月末締"
+
+#. module: sales_order_print_adjust_ysm
+#: code:addons/sales_order_print_adjust_ysm/models/sale.py:33
+#, python-format
+msgid "Cutoff at Next-Month-End"
+msgstr "翌月末締"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Delivery Address:"
+msgstr "納入場所："
+
+#. module: sales_order_print_adjust_ysm
+#: code:addons/sales_order_print_adjust_ysm/models/sale.py:36
+#, python-format
+msgid "Delivery Deadline"
+msgstr "納入期限"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Delivery Deadline:"
+msgstr "納入期限："
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Disc.(%)"
+msgstr "割引（%）"
+
+#. module: sales_order_print_adjust_ysm
+#: code:addons/sales_order_print_adjust_ysm/models/sale.py:29
+#, python-format
+msgid "Expiration Date"
+msgstr "有効期限"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Expiration Date:"
+msgstr "有効期限："
+
+#. module: sales_order_print_adjust_ysm
+#: code:addons/sales_order_print_adjust_ysm/models/sale.py:36
+#, python-format
+msgid "In the period products will be delivered."
+msgstr "この期間中に納入"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "No."
+msgstr "No."
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Notes"
+msgstr "備考欄"
+
+#. module: sales_order_print_adjust_ysm
+#: code:addons/sales_order_print_adjust_ysm/models/sale.py:31
+#, python-format
+msgid "Package Purchase"
+msgstr "一括買取"
+
+#. module: sales_order_print_adjust_ysm
+#: code:addons/sales_order_print_adjust_ysm/models/sale.py:34
+#, python-format
+msgid "Part Purchase"
+msgstr "分割買取"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Product Code"
+msgstr "商品コード"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Product Name"
+msgstr "品目名"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Quantity"
+msgstr "数量"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Quotation Letter"
+msgstr "御見積書"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Reference:"
+msgstr "件名："
+
+#. module: sales_order_print_adjust_ysm
+#: model:ir.model,name:sales_order_print_adjust_ysm.model_sale_order
+msgid "Sales Order"
+msgstr "Sales Order"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Sales Order Letter"
+msgstr "発注書"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Subtotal"
+msgstr "小計"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "TEL"
+msgstr "TEL"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Taxes"
+msgstr "税"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Total"
+msgstr "合計"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Total Amount"
+msgstr "合計金額"
+
+#. module: sales_order_print_adjust_ysm
+#: code:addons/sales_order_print_adjust_ysm/models/sale.py:35
+#, python-format
+msgid "Transaction Method"
+msgstr "取引方法"
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Transaction Method:"
+msgstr "取引方法："
+
+#. module: sales_order_print_adjust_ysm
+#: view:website:sale.report_saleorder_document
+msgid "Unit Price"
+msgstr "単価"
+
+#. module: sales_order_print_adjust_ysm
+#: code:addons/sales_order_print_adjust_ysm/models/sale.py:29
+#, python-format
+msgid "Until the date this quotation is available."
+msgstr "見積はこの日付まで有効"
+
+

@@ -19,24 +19,4 @@
 #
 ##############################################################################
 
-{
-    'name': 'Sales Order/Quotation Print',
-    'version': '1.0',
-    'category': 'Sales',
-    'author': 'Rooms For (Hong Kong) Limited T/A OSCG',
-    'summary': 'Makes adjustments to Sales Order/Quotation print format',
-    'description': """
-* Makes adjustments to SO/Quotation print format
-* Adds fields in SO to be printed on SO/Quotation
-    """,
-    'depends': ["sale"], 
-    'data': [
-        'sale_view.xml',
-        'views/layouts.xml',
-        'views/report_saleorder.xml',
-    ],
-    'installable': True,
-    'application': False,
-    'auto_install': False,
-}
-
+import models

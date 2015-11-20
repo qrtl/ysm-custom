@@ -2,8 +2,25 @@
 <openerp>
 <data>
 <template id="report_saleorder_document_ysm" inherit_id="sale.report_saleorder_document">
-	<xpath expr="//div[@class='page']" position="replace">
-		<div class="page">
+	<xpath expr="//t[@t-call='report.external_layout']" position="replace">
+    	<div class="header">
+        	<div class="row zero_min_height">
+            		<div class="col-xs-12" style="margin-top:20px;">
+                		<div style="border-bottom: 1px solid black;"></div>
+            		</div>
+        	</div>
+        	<div class="row">
+            		<div class="col-xs-4" name="company_address">
+                		<div t-field="o.company_id.partner_id" t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
+                		<div t-if="o.company_id.partner_id.phone">
+					TEL <span t-field="o.company_id.partner_id.phone"/>
+				</div>
+				<div style="border-bottom: 1px solid black;"/>
+            		</div>
+        	</div>
+   	</div>
+
+	<div class="page">
 		<div class="oe_structure"/>
 		
 			<h2 style="text-align: center">
@@ -25,19 +42,19 @@
 					No. <span t-field="o.name"/>
 					<p t-field="o.date_order"/>
 				</div>
-				<div class="col-xs-6">
-				</div>
-				<div class="col-xs-3">
-					<h4>Total Amount</h4>
-				</div>
-				<div class="col-xs-3">
-					<h4 style="text-align: right">
-						<span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
-					</h4>
-				</div>
-				<div class="col-xs-6 pull-right">
-					<div style="border-bottom: 2px solid black"/>
-				</div>
+                                <div class="col-xs-6">
+                                </div>
+                                <div class="col-xs-3">
+                                        <h4>Total Amount</h4>
+                                </div>
+                                <div class="col-xs-3">
+                                        <h4 style="text-align: right">
+                                                <span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                        </h4>
+                                </div>
+                                <div class="col-xs-6 pull-right">
+                                        <div style="border-bottom: 2px double black;"/>
+                                </div>
 			</div>
 			
 			<div class="row mt32 mb32" id="informations">
@@ -134,11 +151,20 @@
 			</div>
 			
 			<strong t-if="o.note">Notes</strong>
-			<p/>
 			<p t-field="o.note"/>
 			
 		<div class="oe_structure"/>
+	</div>
+
+	<div class="footer">
+		<div class="text-center" style="border-top: 1px solid black;">
+			<ul class="list-inline">
+        	        	<li><span class="page"/></li>
+        	        	<li>/</li>
+            	    		<li><span class="topage"/></li>
+			</ul>
 		</div>
+	</div>
 	</xpath>
 </template>
 </data>

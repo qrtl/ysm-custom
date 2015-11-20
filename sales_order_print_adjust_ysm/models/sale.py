@@ -19,4 +19,22 @@
 #
 ##############################################################################
 
-import sale
+from openerp import _
+from openerp.osv import fields, osv
+
+class sale_order(osv.osv):
+    _inherit = "sale.order"
+    
+    _columns = {
+        'expiry_date': fields.date(_('Expiration Date'), select=True, help=_("Until the date this quotation is available.")),
+        'trade_policy': fields.selection([
+            ('package', _('Package Purchase')),
+            ('month', _('Cutoff at Month-End')),
+            ('next', _('Cutoff at Next-Month-End')),
+            ('part', _('Part Purchase')),
+            ], _('Transaction Method')),
+        'deliver_limit': fields.char(_('Delivery Deadline'), help=_("In the period products will be delivered.")),
+    }
+
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+
